@@ -1,0 +1,402 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Maven+Pro:wght@400;600&family=Montserrat:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+}
+
+#header-contain {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 0 0 2rem;
+  list-style: none;
+}
+.menu-btn {
+  position: fixed;
+  right: 2rem;
+  z-index: 1;
+}
+#me-logo {
+  width: min(100%, 150px);
+  margin-inline: auto;
+}
+#me-logo img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+#testTyper {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+}
+
+.carousel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 371px;
+  height: 200px;
+  -webkit-perspective: 800px;
+  perspective: 800px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.carousel-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(-182px) rotateY(0);
+  transform: translateZ(-182px) rotateY(0);
+  -webkit-animation: carousel 10s infinite cubic-bezier(1, 0.015, 0.295, 1.225) forwards;
+  animation: carousel 10s infinite cubic-bezier(1, 0.015, 0.295, 1.225) forwards;
+}
+
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 200px;
+  width: 371px;
+}
+.carousel-item:nth-child(1) {
+  -webkit-transform: rotateY(0) translateZ(182px);
+  transform: rotateY(0) translateZ(182px);
+}
+.carousel-item:nth-child(2) {
+  -webkit-transform: rotateY(120deg) translateZ(182px);
+  transform: rotateY(120deg) translateZ(182px);
+}
+.carousel-item:nth-child(3) {
+  -webkit-transform: rotateY(240deg) translateZ(182px);
+  transform: rotateY(240deg) translateZ(182px);
+}
+
+
+@-webkit-keyframes 
+carousel {  0%, 17.5% {
+ -webkit-transform: translateZ(-182px) rotateY(0);
+ transform: translateZ(-182px) rotateY(0);
+}
+ 27.5%, 45% {
+ -webkit-transform: translateZ(-182px) rotateY(-120deg);
+ transform: translateZ(-182px) rotateY(-120deg);
+}
+ 55%, 72.5% {
+ -webkit-transform: translateZ(-182px) rotateY(-240deg);
+ transform: translateZ(-182px) rotateY(-240deg);
+}
+ 82.5%, 100% {
+ -webkit-transform: translateZ(-182px) rotateY(-360deg);
+ transform: translateZ(-182px) rotateY(-360deg);
+}
+}
+ @keyframes 
+carousel {  0%, 17.5% {
+ -webkit-transform: translateZ(-182px) rotateY(0);
+ transform: translateZ(-182px) rotateY(0);
+}
+ 27.5%, 45% {
+ -webkit-transform: translateZ(-182px) rotateY(-120deg);
+ transform: translateZ(-182px) rotateY(-120deg);
+}
+ 55%, 72.5% {
+ -webkit-transform: translateZ(-182px) rotateY(-240deg);
+ transform: translateZ(-182px) rotateY(-240deg);
+}
+ 82.5%, 100% {
+ -webkit-transform: translateZ(-182px) rotateY(-360deg);
+ transform: translateZ(-182px) rotateY(-360deg);
+}
+}
+
+#faq-contain{
+  background: linear-gradient(to bottom, black, yellow 40%);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 12pt;
+  line-height: 1.5em;
+  padding: 15px;
+  text-align: center;
+  margin: 50rem auto 0;
+  padding: 30rem 0;
+}
+#faq_head{
+  margin-bottom:5px;
+}
+.subheading{
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+dl{
+  margin: 30px auto 60px;
+  max-width: 500px;
+}
+
+dt{
+  background: #edeff3;
+  border: 2px solid #1F2024;
+  color: black;
+  font-weight: 600;
+  padding: 15px;
+  position: relative;
+  text-align: left;
+  text-transform: uppercase;
+  transition: all .5s;
+}
+
+dt:after, dt:before{ 
+  content: "\f078";
+  position: absolute;
+  right: 15px;
+  height: 28px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  
+  transition: all .7s ease-in-out;
+}
+
+dt:before{
+  opacity: 0;
+  transition: all .4s ease-in-out;
+}
+
+dt:hover {
+  cursor: default;
+}
+
+dt + dd{
+  max-height: 0;
+}
+
+dd{
+  background: #1C1C1C;
+  color: #edeff3;
+  margin: 0;
+  overflow: hidden;
+  padding: 1px 15px;
+  transition: all .5s;
+}
+
+dt.open{
+  background: #0E0C0D;
+  border-color: #0E0C0D;
+  color: #edeff3;
+  margin: -5px;
+}
+
+dt.open:after{
+  transform: rotate(180deg) translateY(-2px);
+}
+dt.open:before{
+  opacity: 1;
+  transform: rotate(-360deg) translateY(-3px);
+}
+
+dt.open + dd{
+  padding: 15px 15px 30px;
+  margin: 0 -5px;
+  max-height: 300px;
+}
+
+#about_head {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+}
+#about-contain {
+  background: linear-gradient(to bottom, yellow, rgb(30, 144, 255));
+  padding: 7rem 0;
+}
+#about-contain p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12pt;
+}
+#about-contain p:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+/* The "Main" Cluster creates the form appearance
+  #email_form embodies the whole box */
+  #email_form {
+    padding: 10rem 0 10rem 5px;
+    background: linear-gradient(to bottom, rgb(30, 144, 255), rgb(244, 244, 244));
+  }
+  /* div is in control of input titles and input boxes */
+  #email_form div {
+    margin-bottom: 5px;
+  }
+  /* Span resembles the red asterisk that is to be replaced with error messages */
+  #email_form div span {
+    margin-left: 5px;
+    color: #f9423d;
+  }
+  /* the label is organizing input titles/boxes to be stacked evenly */
+  #email_form div label {
+    color: white;
+    display: flex;
+    flex-flow: column wrap;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12pt;
+  }
+  /* h1 is disconnected from the form and is treated to float solo */
+  #form_h1 {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: white;
+  }
+  /* input pushes the text away from the border;removes outline */
+  input {
+    outline: none;
+    padding-left: 1px;
+    width: 200px;
+  }
+  /* questions/comments? removes the ability to resize;adds border;changes font */
+  textarea {
+    resize: none;
+    outline: none;
+    border: none;
+    height: 100px;
+    width: 100%;
+    padding: 3px 0 0 3px;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 10pt;
+  }
+  /* sizing the submit button for the form;adds transition that changes radius and background color */
+  #form_btn {
+    width: 80px;
+    height: 35px;
+    margin: 5px auto 0;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: #f9423d;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+  }
+  /* demonstrates how the transition will change for the form button */
+  #form_btn:hover {
+    border-radius: 20px;
+    background-color: whitesmoke;
+    color: black;
+  }
+/* Footer CSS Begins
+  footer 'fixes' box to bottom of page;adds linear flare;extra padding for content */
+  footer {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(244, 244, 244, 1), rgba(150, 150, 150, 0.3));
+  }
+  #footer-contain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+  }
+  #footer-contain p {
+    padding: 5px 3px;
+    font-family: "Cinzel", sans-serif;
+    font-size: 10pt;
+    color: rgb(233, 224, 224);
+    text-align: center;
+  }
+
+  .foot_brand {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: black;
+    background-color: rgb(201, 201, 201);
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px 1px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  .foot_brand span {
+    color: dodgerblue;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .carousel {
+      position: absolute;
+      top: 65%;
+      width: 239px;
+      height: 186px;
+      perspective: 180px;
+    }
+    .carousel-item img {
+      width: 100%;
+
+    }
+    #faq-contain {
+      margin: 44rem auto 0;
+      padding: 21rem 0;
+      
+    }
+    #game_contain {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    #form_h1 {
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+    #email_form div span {
+      font-family: "Cinzel", sans-serif;
+      font-weight: 600;
+      font-size: 10pt;
+      color: black;
+    }
+    textarea {
+      max-width: 600px;
+      margin-top: 2rem;
+    }
+    #game_contain {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    #game_contain {
+      display: contents;
+    }
+  }
+
+  /* ************ Mod Log **************
+  * April 7, 2023
+  * - added tablet/desktop media query
+  * - changed height/width of carousel standard dimensions
+  * - form error span has been given a new font and size to end clash with bg color
+  * - temporarily suspended snake! to only be playable on desktop screens
+  */
